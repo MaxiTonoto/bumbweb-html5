@@ -1,0 +1,103 @@
+#end-gen {
+  display: none;
+}
+
+#enter-name {
+  display: block;
+}
+
+#enter-name-display {
+  display: block;
+  position: absolute;
+  top: 5%;
+  left: 0%;
+  width: 100%;
+  height: 25%;
+  text-align: center;
+}
+
+#toggle-keyboardwrite {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 3%;
+  width: 20%;
+  height: 75%;
+  text-wrap: unset;
+  font-size: 1rem;
+  font-size: clamp(0.25rem, 2vw, 2rem);
+  padding: 0%;
+  will-change: opacity;
+  transition: opacity 0.25s ease-in-out;
+}
+
+#name-input-label {
+  font-size: 2rem;
+  font-size: clamp(1rem, 4vw, 2rem);
+}
+#input-player-name {
+  font-family: "Determination Mono";
+  width: 50%;
+  margin: auto;
+  height: 42%;
+  font-size: clamp(0.75rem, 2.5vw, 4rem);
+}
+
+#enter-name-screenkeyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+  margin-top: 10px;
+  position: absolute;
+  height: 65%;
+  top: 32.5%;
+  width: 100%;
+  left: 0%;
+}
+
+#done-button {
+  display: none;
+  position: absolute;
+  height: 42%;
+  width: fit-content;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(0.25rem, 2vw, 1rem);
+}
+
+.tecla:hover {
+  border-radius: 5%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+#name-to-certificate {
+  display: none;
+  opacity: 0;
+  background-color: black;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 10000;
+}
+
+#end-certificate {
+  display: none;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+}
+
+#win-certificate {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+}
+
+#download-certificate-button {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  transform-origin: bottom;
+}

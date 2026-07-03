@@ -1,0 +1,78 @@
+#intro {
+  display: block;
+	opacity: 1;
+}
+
+#skip-intro-button {
+  position: absolute;
+  bottom: 5%; right: 2%;
+  z-index: 100;
+}
+
+#intro-bg {
+  background: radial-gradient(
+    circle 212px,
+    rgba(52, 52, 102, 0.1) 10%,
+    rgb(0, 0, 0)
+  );
+  z-index: 1;
+}
+
+#intro-platform {
+  position: absolute;
+  width: 25%;
+  height: auto;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+#bumguide {
+  position: absolute;
+  width: 35%;
+  height: auto;
+  top: 55%;
+  left: 50%;
+  will-change: transform;
+  transform: translate(-50%, -50%);
+  animation: floating 2s ease-in-out infinite;
+  z-index: 5;
+}
+
+
+
+
+@keyframes floating {
+  0% {transform: translate(-50%, -50%);}
+  50% {transform: translate(-50%, -55%);}
+  100% {transform: translate(-50%, -50%);}
+}
+
+.bumguide-dialogue {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 7;
+	width: 65%;
+  font-size: calc(8px + 2vw);
+}
+
+#intro-help-text {
+  position: absolute;
+  bottom: 3%;
+  width: 100%;
+  text-align: center;
+  z-index: 8;
+  font-size: calc(8px + 1vw);
+}
+
+#intro-screen-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}

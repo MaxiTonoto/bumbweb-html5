@@ -1,0 +1,166 @@
+#play {
+    display: none;
+    background-color: rgb(42,42,42);
+    background: linear-gradient(to bottom, rgb(32,32,32), rgb(12,12,12));
+    object-fit: cover;
+    animation: none;
+    color: rgb(182,182,182);
+}
+
+#lose-captions {
+    display: none;
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    font-size: 3rem;
+    opacity: 0;
+    text-align: center;
+    will-change: opacity;
+    color: rgb(210,210,210);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-in-out;
+    z-index: 1000;
+}
+
+.lose-button {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#game-caption {
+    display: none;
+    position: absolute;
+    bottom: 35%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    opacity: 1;
+    will-change: opacity;
+    color: rgb(102,102,102);
+    transition: opacity 0.5s ease-in-out;
+}
+
+.screen-button {
+    cursor: pointer;
+    display: none;
+    
+    z-index: 100;
+}
+
+#play-background {
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1;
+}
+
+.character {
+    position: absolute;
+    bottom: 42%;
+    z-index: 5;
+    will-change: transform;
+    transition: all 0.15s ease-in-out;
+} #call {
+    height: 20%; width: auto;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    bottom: 42%;
+    right: 130%;
+    z-index: 4;
+    animation: floating-call 2s ease-in-out infinite;
+    transition: right 0.5s linear, transform 0.15s ease-in-out;
+}
+#call.glow {
+    animation: floating-call 2s ease-in-out infinite,
+                glow-call 0.75s ease-in-out 1;
+}
+#player {
+    left: 15%;
+    height: 20%; width: auto;
+    animation: floating-call 4s ease-in-out infinite;
+} #enemy {
+    right: 15%;
+    height: 30%; width: auto;
+    animation: floating-call 3s ease-in-out infinite;
+}
+
+#show-onhover-tooltip {
+    display: none;
+    min-height: 25%;
+    max-height: 50%;
+    width: 75%;
+    background-color: rgba(10, 10, 24, 0.5);
+    border-bottom: solid 0.25rem rgba(33, 19, 120, 0.5);
+    border-right: solid 0.25rem rgba(33, 19, 120, 0.5);
+    align-items: center;
+    position: relative;
+    border-bottom-right-radius: 12px;
+}
+
+#tooltip-image {
+    position: absolute;
+    object-fit: contain;
+    height: 75%;
+    left: 1%;
+}
+
+#tooltip-text-content {
+    width: 75%;
+    margin-left: 22%;
+}
+
+#tooltip-text-title {
+    font-size: clamp(5px, 3.5vw, 24px);
+}
+#tooltip-text-description {
+    font-size: clamp(4px, 2vw, 20px);
+}
+
+#d-cert {
+    position: absolute;
+    height: 10%;
+    width: auto;
+    top: -10%;
+    left: 22%;
+}
+
+@keyframes floating-call {
+    0%   {margin-bottom: -1%;}
+    50%  {margin-bottom: 0;}
+    100% {margin-bottom: -1%;}
+}
+
+@keyframes glow-call {
+    0%   {filter: brightness(100%) drop-shadow(0 0 0 rgba(255,255,255,0));}
+    25%  {filter: brightness(125%) drop-shadow(0 0 0.25rem rgba(255,255,255,1));}
+    75%  {filter: brightness(125%) drop-shadow(0 0 0.25rem rgba(255,255,255,1));}
+    100% {filter: brightness(100%) drop-shadow(0 0 0 rgba(255,255,255,0));}
+}
+
+@keyframes shake-screen {
+    0%  {transform: translateX(0);}
+    10% {transform: translateX(-5%);}
+    30% {transform: translateX(5%);}
+    50% {transform: translateX(-5%);}
+    70% {transform: translateX(5%);}
+    90% {transform: translateX(-5%);}
+    100%{transform: translateX(0);}
+}
+
+@keyframes dancey-bruh {
+    0%   { transform: rotateZ(-25deg) translateY(0) translateX(-10%); }
+    25% { transform: rotateZ(0deg) translateY(-5%) translateX(0); }
+    50%  { transform: rotateZ(25deg) translateY(0) translateX(10%); }
+    75% { transform: rotateZ(0deg) translateY(-5%) translateX(0); }
+    100%   { transform: rotateZ(-25deg) translateY(0) translateX(-10%); }
+}
+
+@media (max-width: 540px) {
+    #show-onhover-tooltip {
+        width: 100%;
+    }
+    #tooltip-image {
+        left: 4%;
+    }
+}

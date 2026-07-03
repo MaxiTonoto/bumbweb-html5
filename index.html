@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Legend of Bumbweb</title>
+    <link rel="icon" href="bumbweb_game/sprites/icon.ico" />
+
+    <link rel="stylesheet" href="bumbweb_game/common/bulma.min.css" />
+    <link rel="stylesheet" href="bumbweb_game/common/base.css" />
+
+    <link rel="stylesheet" href="bumbweb_game/css/styles.css" />
+    <link rel="stylesheet" href="bumbweb_game/css/intro.css" />
+    <link rel="stylesheet" href="bumbweb_game/css/play.css" />
+    <link rel="stylesheet" href="bumbweb_game/css/gui.css" />
+    <link rel="stylesheet" href="bumbweb_game/css/dices.css" />
+    <link rel="stylesheet" href="bumbweb_game/css/endgen.css" />
+
+    <script src="bumbweb_game/js/loader.js" type="module"></script>
+    <script src="bumbweb_game/js/intro.js" type="module"></script>
+    <script src="bumbweb_game/js/play.js" type="module"></script>
+    <script src="bumbweb_game/js/play/gui.js" type="module"></script>
+    <script src="bumbweb_game/js/play/dices.js" type="module"></script>
+    <script src="bumbweb_game/js/play/charHovers.js" type="module"></script>
+
+    <script src="bumbweb_game/js/play/attack.js" type="module"></script>
+    <script src="bumbweb_game/js/play/magic.js" type="module"></script>
+    <script src="bumbweb_game/js/play/call.js" type="module"></script>
+    <script src="bumbweb_game/js/play/call-effects.js" type="module"></script>
+    <script src="bumbweb_game/js/play/stats.js" type="module"></script>
+    <script src="bumbweb_game/js/play/characters.js" type="module"></script>
+    <script src="bumbweb_game/js/play/sfx.js" type="module"></script>
+
+    <script src="bumbweb_game/js/endgen/endgen.js" type="module"></script>
+    <script
+      src="bumbweb_game/js/endgen/screenKeyboard.js"
+      type="module"
+    ></script>
+  </head>
+  <body>
+    <header id="game-header">
+      <h1 class="title is-1 has-text-centered my-4">The Legend of Bumbweb</h1>
+    </header>
+
+    <div id="game-zone" class="pb-4 mb-2">
+      <div id="loader">
+        <span>Cargando...</span>
+        <progress id="loading-progress" value="0" max="100"></progress>
+      </div>
+      <section id="game" style="display: none">
+        <div id="intro" class="game-screen">
+          <button role="none" id="skip-intro-button" class="button is-primary">
+            Skip &rArr;
+          </button>
+          <div id="intro-screen-button"></div>
+
+          <p class="is-size-5-widescreen" id="intro-help-text">
+            Click para continuar
+          </p>
+
+          <p
+            id="intro-dialogue"
+            class="bumguide-dialogue has-text-centered has-text-white is-size-1-widescreen"
+          ></p>
+
+          <img
+            src="bumbweb_game/sprites/characters/bumguide-1.png"
+            id="bumguide"
+          />
+
+          <img src="bumbweb_game/sprites/platform.png" id="intro-platform" />
+
+          <div id="intro-bg" class="game-screen"></div>
+        </div>
+
+        <div id="intro-to-play" class="game-screen"></div>
+
+        <div id="play" class="game-screen">
+          <div id="lose-captions">
+            <p id="lose-caption">¿Reintentar?</p>
+            <div id="lose-buttons">
+              <button id="lose-accept" class="button is-success lose-button">
+                Si
+              </button>
+              <button id="lose-reject" class="button is-danger lose-button">
+                No
+              </button>
+            </div>
+          </div>
+
+          <p id="game-caption">¡Mana insuficiente!</p>
+
+          <audio
+            id="bumguide-sound"
+            src="bumbweb_game/sfx/bumguide-talk.wav"
+          ></audio>
+
+          <audio
+            id="play-bgm"
+            class="game-music"
+            src="bumbweb_game/sfx/let-the-games-begin.mp3"
+            loop
+          ></audio>
+          <audio
+            id="end-bgm"
+            class="game-music"
+            src="bumbweb_game/sfx/Good-Night.mp3"
+            loop
+          ></audio>
+          <audio
+            id="lose-dance-bgm"
+            class="game-music"
+            src="bumbweb_game/sfx/dogsong.mp3"
+            loop
+          ></audio>
+          <audio
+            id="play-text-audio"
+            src="bumbweb_game/sfx/SND_TXT1.wav"
+          ></audio>
+          <audio
+            id="open-magic-menu-sfx"
+            src="bumbweb_game/sfx/open-magic-menu.mp3"
+          ></audio>
+          <audio
+            id="close-magic-menu-sfx"
+            src="bumbweb_game/sfx/close-magic-menu.mp3"
+          ></audio>
+
+          <audio id="damage-sfx" src="bumbweb_game/sfx/damage.mp3"></audio>
+          <audio
+            id="call-enter-sfx"
+            src="bumbweb_game/sfx/call-enter.mp3"
+          ></audio>
+          <audio id="call-out-sfx" src="bumbweb_game/sfx/call-out.mp3"></audio>
+
+          <audio id="eurgh" src="bumbweb_game/sfx/eurgh.wav"></audio>
+          <audio id="eurgh-call" src="bumbweb_game/sfx/eurghCall.wav"></audio>
+          <audio id="effect-aah" src="bumbweb_game/sfx/Aah.mp3"></audio>
+
+          <audio
+            id="dice-ready-sfx"
+            src="bumbweb_game/sfx/dice-ready.mp3"
+          ></audio>
+          <audio
+            id="dice-throw-sfx"
+            src="bumbweb_game/sfx/dice-throw.mp3"
+          ></audio>
+          <audio
+            id="dice-plusonevalue-sfx"
+            src="bumbweb_game/sfx/dice-plusonevalue.mp3"
+          ></audio>
+
+          <audio
+            id="cast-bumbo-win-sfx"
+            src="bumbweb_game/sfx/cast-bumbo-win.mp3"
+          ></audio>
+          <audio
+            id="cast-valuepp-sfx"
+            src="bumbweb_game/sfx/cast-valuepp.mp3"
+          ></audio>
+          <audio id="heal-sfx" src="bumbweb_game/sfx/heal.mp3"></audio>
+          <audio
+            id="cast-breadcheese-sfx"
+            src="bumbweb_game/sfx/punchstrong.mp3"
+          ></audio>
+          <div id="stats" style="display: none">
+            <div id="player-hp" data-player-hp="0"></div>
+            <div id="player-mana" data-player-mana="0"></div>
+            <div id="player-dmg" data-player-dmg="0"></div>
+
+            <div id="enemy-hp" data-enemy-hp="0"></div>
+            <div id="enemy-dmg" data-enemy-dmg="0"></div>
+          </div>
+
+          <div id="right-gui-items"></div>
+          <div
+            id="attack-screen-button"
+            class="game-screen screen-button"
+          ></div>
+          <div
+            id="magic-screen-button"
+            class="game-screen screen-button"
+            data-cast-magic="0"
+          ></div>
+          <div id="call-screen-button" class="game-screen screen-button"></div>
+          <div id="item-screen-button" class="game-screen screen-button"></div>
+
+          <div id="gui">
+            <div id="mana-cost-display">
+              <p id="mana-cost-label" class="has-text-centered">
+                <span id="mana-cost">0</span>
+                <span> MANA</span>
+              </p>
+            </div>
+
+            <div id="enemy-hp-display">
+              <p id="enemy-hp-label" class="has-text-centered"></p>
+            </div>
+
+            <button id="player-back-button" class="has-text-centered">
+              <b>&leftarrow;</b>
+            </button>
+
+            <div id="gui-left">
+              <div id="player-stats">
+                <div id="stat-labels" class="has-text-right mr-2">
+                  <p class="stat-label">HP</p>
+                  <p class="stat-label">MP</p>
+                  <p class="stat-label">DMG</p>
+                </div>
+                <div id="stat-displays" class="has-text-left">
+                  <p class="stat-display" id="player-hp-label"></p>
+                  <p class="stat-display" id="player-mana-label"></p>
+                  <p class="stat-display" id="player-dmg-label"></p>
+                </div>
+              </div>
+            </div>
+
+            <div id="gui-center">
+              <p id="play-text" style="font-size: calc(9px + 1vw)"></p>
+            </div>
+
+            <div id="gui-right">
+              <button id="attack-button" class="gui-button">Atacar</button>
+              <button id="magic-button" class="gui-button">Magia</button>
+              <button id="call-button" class="gui-button">Llamar</button>
+            </div>
+
+            <div id="gui-right-magic">
+              <button
+                class="gui-button spell"
+                id="spell-bumbo"
+                data-spell-id="0"
+                data-mana-cost="2"
+              >
+                Bum(bo)
+              </button>
+              <button
+                class="gui-button spell"
+                id="spell-valuepp"
+                data-spell-id="1"
+                data-mana-cost="12"
+              >
+                Valor++
+              </button>
+              <button
+                class="gui-button spell"
+                id="spell-old-bandage"
+                data-spell-id="2"
+                data-mana-cost="16"
+              >
+                Vendaje Viejo
+              </button>
+              <button
+                class="gui-button spell"
+                id="spell-bread-cheese"
+                data-spell-id="3"
+                data-mana-cost="9"
+              >
+                Pan Queso
+              </button>
+            </div>
+          </div>
+
+          <div
+            id="game-elements"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+          >
+            <img id="d-cert" src="bumbweb_game/sprites/d-cert.png" />
+
+            <div id="player-dices">
+              <div
+                id="player-dices-relative"
+                style="position: relative; width: 100%; height: 100%"
+              ></div>
+            </div>
+            <div id="enemy-dices"></div>
+
+            <div id="show-onhover-tooltip">
+              <img
+                id="tooltip-image"
+                src="bumbweb_game/sprites/characters/enemy.png"
+              />
+              <div id="tooltip-text-content">
+                <h3 id="tooltip-text-title" class="has-text-white">Bumbino</h3>
+                <p id="tooltip-text-description"></p>
+              </div>
+            </div>
+
+            <img
+              src="bumbweb_game/sprites/characters/player.png"
+              id="player"
+              class="character"
+            />
+            <img src="bumbweb_game/sprites/calls/call-6.png" id="call" />
+            <img
+              src="bumbweb_game/sprites/characters/enemy.png"
+              id="enemy"
+              class="character"
+            />
+          </div>
+        </div>
+
+        <div id="play-to-certificate" class="game-screen"></div>
+
+        <div id="end-gen" class="game-screen">
+          <div id="enter-name" class="game-screen">
+            <div id="enter-name-display">
+              <button class="button" id="toggle-keyboardwrite">
+                Teclado del sistema
+              </button>
+              <p id="name-input-label">Ingresa tu nombre</p>
+              <input
+                type="text"
+                maxlength="12"
+                id="input-player-name"
+                class="input"
+                readonly
+              />
+              <button class="button is-success" id="done-button">Listo</button>
+            </div>
+            <div id="enter-name-screenkeyboard"></div>
+          </div>
+
+          <div id="name-to-certificate" class="game-screen"></div>
+
+          <div id="end-certificate" class="game-screen">
+            <button id="download-certificate-button" class="button is-success">
+              Descargar
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <footer id="game-buttons" class="mt-2">
+        <div id="game-buttons-left">
+          <button class="button game-buttons" id="toggle-volume">🔊</button>
+          <input
+            class="mx-3"
+            type="range"
+            id="sfx-volume-slider"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.5"
+            style="width: 65%"
+          />
+        </div>
+        <div id="game-buttons-center">
+          <button class="button game-buttons" id="mute-all">🔇</button>
+          <button
+            class="button game-buttons"
+            id="go-fullscreen"
+            onclick="document.getElementById('game').requestFullscreen();"
+          >
+            ⛶
+          </button>
+          <button
+            class="button game-buttons"
+            id="reset-game"
+            onclick="location.reload();"
+          >
+            🔄
+          </button>
+        </div>
+        <div id="game-buttons-right">
+          <button class="button game-buttons" id="toggle-music">🎵</button>
+          <input
+            class="mx-3"
+            style="transform: rotateZ(180deg); width: 65%"
+            type="range"
+            id="music-volume-slider"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.25"
+          />
+        </div>
+      </footer>
+      <div
+        class="notification is-secondary mx-auto mt-4 has-text-centered"
+        style="width: 100%"
+      >
+        <p>
+          💡 <strong>Tip:</strong> haz hover sobre los personajes en el juego
+          para ver detalles.
+        </p>
+      </div>
+    </div>
+    <div class="box mx-auto" style="width: 75%">
+      <p class="title is-3">Créditos y atribuciones</p>
+      <table class="table is-hoverable">
+        <tbody>
+          <tr>
+            <td>Let the Games Begin - Psychronic</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://pixabay.com/music/electronic-let-the-games-begin-21858/"
+                >Link</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Good Night - Toby Fox</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://store.steampowered.com/app/391570/UNDERTALE_Soundtrack/"
+                >Link</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Dogsong - Toby Fox</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://store.steampowered.com/app/391570/UNDERTALE_Soundtrack/"
+                >Link</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Undertale Sound Effects</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://store.steampowered.com/app/391540/Undertale/"
+                >Link</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>The Legend of Bum-Bo Sound Effects</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://store.steampowered.com/app/1148650/The_Legend_of_BumBo/"
+                >Link</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <section class="hero is-dark is-small">
+      <div class="hero-body has-text-centered">
+        <p class="title is-5">Código fuente</p>
+        <p class="subtitle has-text-centered is-6 mb-3">
+          ¡Disponible en GitHub!
+        </p>
+        <a
+          class="button is-success"
+          href="https://github.com/MaxiTonoto/bumbweb-html5"
+          target="_blank"
+        >
+          Ver repositorio
+        </a>
+      </div>
+    </section>
+  </body>
+</html>

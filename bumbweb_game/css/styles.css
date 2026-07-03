@@ -1,0 +1,120 @@
+#game-zone {
+  min-height: 100%;
+  width: 75%;
+  margin: auto;
+}
+
+#go-home {
+  position: absolute;
+  top: 5%; left: 5%;
+}
+
+#loader {
+  background: linear-gradient(to bottom, rgb(32,32,32), rgb(12,12,12));
+  position: relative;
+  margin: auto;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 9999;
+  font-family: 'Determination Mono';
+}
+
+#loading-progress {
+  background-color: rgb(71, 236, 110);
+}
+
+@font-face {
+  font-family: "Determination Mono";
+  src: url("../extras/DTM-Mono.woff2") format("woff2"),
+    url("../extras/DTM-Mono.woff") format("woff"),
+    url("../bumbweb_game/extras/DTM-Mono.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+#game {
+  position: relative;
+  margin: auto;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background-color: rgba(51, 51, 63, 0.5);
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Determination Mono';
+}
+
+.game-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#intro-to-play {
+  display: none;
+  z-index: 10000;
+  transition: all 0.25s linear;
+  background-color: rgb(0,0,0);
+  will-change: opacity;
+  opacity: 0;
+}
+
+#play-to-certificate {
+  display: none;
+  z-index: 10000;
+  transition: all 0.25s linear;
+  will-change: opacity;
+  background-color: rgb(0,0,0);
+  opacity: 0;
+}
+
+#game-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+#game-buttons-left {
+  display: flex;
+  flex-direction: row;
+  order: 0;
+  width: 40%;
+  align-items: center;
+  text-align: left;
+}
+#game-buttons-center {
+  order: 1;
+  width: 20%;
+  text-align: center;
+}
+#game-buttons-right {
+  display: flex;
+  flex-direction: row-reverse;
+  order: 2;
+  width: 40%;
+  align-items: center;
+  text-align: right;
+}
+
+.game-buttons {
+  width: 3rem;
+}
+
+@media (max-width: 1024px) {
+  #game-zone {
+    width: 96%;
+  }
+  #go-home {
+    position: relative;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+}

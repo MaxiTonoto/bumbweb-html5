@@ -1,0 +1,50 @@
+#player-dices {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+#enemy-dices {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.dice {
+  position: absolute;
+  height: 12%;
+  width: auto;
+  z-index: 10;
+  transition: bottom 250ms linear, right 250ms linear, left 250ms linear, width 100ms linear, height 100ms linear;
+}
+
+@keyframes fly-dice {
+  0%   {transform: rotateZ(0deg);}
+  100% {transform: rotateZ(360deg);}
+}
+
+@keyframes up-valued {
+  0% {
+    filter: none;
+  } 50% {
+    filter: brightness(0) invert(1);
+  } 100% {
+    filter: none;
+  }
+}
+
+@keyframes one-or-six {
+  0% {
+    filter: none;
+  } 50% {
+    filter: invert(100%) sepia(100%) saturate(1000%) hue-rotate(-30deg);
+  } 100% {
+    filter: none;
+  }
+}
