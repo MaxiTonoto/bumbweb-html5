@@ -19,8 +19,8 @@ cd bumbweb-html5
 
 Opening index.html may not work due to browser restrictions on local file access. Thus, the use of **VS Code Live Server**, **Python http server** or **Node's http server** is recommended
 
-Python: ```python -m http.server```
-Node: ```npx http-server .```
+- Python: ```python -m http.server``` 
+- Node: ```npx http-server .```
 
 ## Examples
 ### Dice attack
