@@ -10,7 +10,7 @@ import { shrinkBack, playerMove, playerMoveBack, setPlayerExpression } from "./c
 import { checkWhoCallEffects, outCallEffects } from './call-effects.js';
 import { callEnterSFX, callOutSFX, playDiceReadySFX } from "./sfx.js";
 
-const staticUrl = "../";
+const staticUrl = "./";
 let callScreenButton = document.getElementById("call-screen-button");
 let callButton = document.getElementById("call-button");
 

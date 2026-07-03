@@ -3,7 +3,7 @@ import { growBack, setPlayerExpression, setEnemyExpression, setCallExpression } 
 import { theLostEffect, keeperEffect } from './call-effects.js';
 import { playDicePlusOneValueSFX, playDiceThrowSFX } from './sfx.js';
 
-const staticUrl = "../";
+const staticUrl = "./";
 export const playerDices = document.getElementById("player-dices-relative");
 export const enemyDices = document.getElementById("enemy-dices");
 

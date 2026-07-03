@@ -1,5 +1,6 @@
 import { gameVars } from "../play.js";
 
+const staticUrl = "./";
 let callUrl = document.getElementById("call").src;
 let dateToday = new Date();
 dateToday = dateToday.toLocaleDateString("es-ES");

@@ -3,6 +3,8 @@ import { stats, updateStatLabels } from './stats.js';
 import { effectSuccesfulSFX } from './sfx.js';
 import { call } from './call.js';
 
+const staticUrl = "./";
+
 export function checkWhoCallEffects(playerDiceValue=1) {
     if (playerDiceValue === 2) {
         if (!stats.playerDmgUp) {

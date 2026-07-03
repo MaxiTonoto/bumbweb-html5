@@ -34,7 +34,7 @@
   font-family: "Determination Mono";
   src: url("../extras/DTM-Mono.woff2") format("woff2"),
     url("../extras/DTM-Mono.woff") format("woff"),
-    url("../bumbweb_game/extras/DTM-Mono.otf") format("opentype");
+    url("../extras/DTM-Mono.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

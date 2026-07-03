@@ -4,36 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Legend of Bumbweb</title>
-    <link rel="icon" href="bumbweb_game/sprites/icon.ico" />
+    <link rel="icon" href="./bumbweb_game/sprites/icon.ico" />
 
-    <link rel="stylesheet" href="bumbweb_game/common/bulma.min.css" />
-    <link rel="stylesheet" href="bumbweb_game/common/base.css" />
+    <link rel="stylesheet" href="./bumbweb_game/common/bulma.min.css" />
+    <link rel="stylesheet" href="./bumbweb_game/common/base.css" />
 
-    <link rel="stylesheet" href="bumbweb_game/css/styles.css" />
-    <link rel="stylesheet" href="bumbweb_game/css/intro.css" />
-    <link rel="stylesheet" href="bumbweb_game/css/play.css" />
-    <link rel="stylesheet" href="bumbweb_game/css/gui.css" />
-    <link rel="stylesheet" href="bumbweb_game/css/dices.css" />
-    <link rel="stylesheet" href="bumbweb_game/css/endgen.css" />
+    <link rel="stylesheet" href="./bumbweb_game/css/styles.css" />
+    <link rel="stylesheet" href="./bumbweb_game/css/intro.css" />
+    <link rel="stylesheet" href="./bumbweb_game/css/play.css" />
+    <link rel="stylesheet" href="./bumbweb_game/css/gui.css" />
+    <link rel="stylesheet" href="./bumbweb_game/css/dices.css" />
+    <link rel="stylesheet" href="./bumbweb_game/css/endgen.css" />
 
-    <script src="bumbweb_game/js/loader.js" type="module"></script>
-    <script src="bumbweb_game/js/intro.js" type="module"></script>
-    <script src="bumbweb_game/js/play.js" type="module"></script>
-    <script src="bumbweb_game/js/play/gui.js" type="module"></script>
-    <script src="bumbweb_game/js/play/dices.js" type="module"></script>
-    <script src="bumbweb_game/js/play/charHovers.js" type="module"></script>
+    <script src="./bumbweb_game/js/loader.js" type="module"></script>
+    <script src="./bumbweb_game/js/intro.js" type="module"></script>
+    <script src="./bumbweb_game/js/play.js" type="module"></script>
+    <script src="./bumbweb_game/js/play/gui.js" type="module"></script>
+    <script src="./bumbweb_game/js/play/dices.js" type="module"></script>
+    <script src="./bumbweb_game/js/play/charHovers.js" type="module"></script>
 
-    <script src="bumbweb_game/js/play/attack.js" type="module"></script>
-    <script src="bumbweb_game/js/play/magic.js" type="module"></script>
-    <script src="bumbweb_game/js/play/call.js" type="module"></script>
-    <script src="bumbweb_game/js/play/call-effects.js" type="module"></script>
-    <script src="bumbweb_game/js/play/stats.js" type="module"></script>
-    <script src="bumbweb_game/js/play/characters.js" type="module"></script>
-    <script src="bumbweb_game/js/play/sfx.js" type="module"></script>
+    <script src="./bumbweb_game/js/play/attack.js" type="module"></script>
+    <script src="./bumbweb_game/js/play/magic.js" type="module"></script>
+    <script src="./bumbweb_game/js/play/call.js" type="module"></script>
+    <script src="./bumbweb_game/js/play/call-effects.js" type="module"></script>
+    <script src="./bumbweb_game/js/play/stats.js" type="module"></script>
+    <script src="./bumbweb_game/js/play/characters.js" type="module"></script>
+    <script src="./bumbweb_game/js/play/sfx.js" type="module"></script>
 
-    <script src="bumbweb_game/js/endgen/endgen.js" type="module"></script>
+    <script src="./bumbweb_game/js/endgen/endgen.js" type="module"></script>
     <script
-      src="bumbweb_game/js/endgen/screenKeyboard.js"
+      src="./bumbweb_game/js/endgen/screenKeyboard.js"
       type="module"
     ></script>
   </head>
@@ -64,11 +64,11 @@
           ></p>
 
           <img
-            src="bumbweb_game/sprites/characters/bumguide-1.png"
+            src="./bumbweb_game/sprites/characters/bumguide-1.png"
             id="bumguide"
           />
 
-          <img src="bumbweb_game/sprites/platform.png" id="intro-platform" />
+          <img src="./bumbweb_game/sprites/platform.png" id="intro-platform" />
 
           <div id="intro-bg" class="game-screen"></div>
         </div>
@@ -92,76 +92,76 @@
 
           <audio
             id="bumguide-sound"
-            src="bumbweb_game/sfx/bumguide-talk.wav"
+            src="./bumbweb_game/sfx/bumguide-talk.wav"
           ></audio>
 
           <audio
             id="play-bgm"
             class="game-music"
-            src="bumbweb_game/sfx/let-the-games-begin.mp3"
+            src="./bumbweb_game/sfx/let-the-games-begin.mp3"
             loop
           ></audio>
           <audio
             id="end-bgm"
             class="game-music"
-            src="bumbweb_game/sfx/Good-Night.mp3"
+            src="./bumbweb_game/sfx/Good-Night.mp3"
             loop
           ></audio>
           <audio
             id="lose-dance-bgm"
             class="game-music"
-            src="bumbweb_game/sfx/dogsong.mp3"
+            src="./bumbweb_game/sfx/dogsong.mp3"
             loop
           ></audio>
           <audio
             id="play-text-audio"
-            src="bumbweb_game/sfx/SND_TXT1.wav"
+            src="./bumbweb_game/sfx/SND_TXT1.wav"
           ></audio>
           <audio
             id="open-magic-menu-sfx"
-            src="bumbweb_game/sfx/open-magic-menu.mp3"
+            src="./bumbweb_game/sfx/open-magic-menu.mp3"
           ></audio>
           <audio
             id="close-magic-menu-sfx"
-            src="bumbweb_game/sfx/close-magic-menu.mp3"
+            src="./bumbweb_game/sfx/close-magic-menu.mp3"
           ></audio>
 
-          <audio id="damage-sfx" src="bumbweb_game/sfx/damage.mp3"></audio>
+          <audio id="damage-sfx" src="./bumbweb_game/sfx/damage.mp3"></audio>
           <audio
             id="call-enter-sfx"
-            src="bumbweb_game/sfx/call-enter.mp3"
+            src="./bumbweb_game/sfx/call-enter.mp3"
           ></audio>
-          <audio id="call-out-sfx" src="bumbweb_game/sfx/call-out.mp3"></audio>
+          <audio id="call-out-sfx" src="./bumbweb_game/sfx/call-out.mp3"></audio>
 
-          <audio id="eurgh" src="bumbweb_game/sfx/eurgh.wav"></audio>
-          <audio id="eurgh-call" src="bumbweb_game/sfx/eurghCall.wav"></audio>
-          <audio id="effect-aah" src="bumbweb_game/sfx/Aah.mp3"></audio>
+          <audio id="eurgh" src="./bumbweb_game/sfx/eurgh.wav"></audio>
+          <audio id="eurgh-call" src="./bumbweb_game/sfx/eurghCall.wav"></audio>
+          <audio id="effect-aah" src="./bumbweb_game/sfx/Aah.mp3"></audio>
 
           <audio
             id="dice-ready-sfx"
-            src="bumbweb_game/sfx/dice-ready.mp3"
+            src="./bumbweb_game/sfx/dice-ready.mp3"
           ></audio>
           <audio
             id="dice-throw-sfx"
-            src="bumbweb_game/sfx/dice-throw.mp3"
+            src="./bumbweb_game/sfx/dice-throw.mp3"
           ></audio>
           <audio
             id="dice-plusonevalue-sfx"
-            src="bumbweb_game/sfx/dice-plusonevalue.mp3"
+            src="./bumbweb_game/sfx/dice-plusonevalue.mp3"
           ></audio>
 
           <audio
             id="cast-bumbo-win-sfx"
-            src="bumbweb_game/sfx/cast-bumbo-win.mp3"
+            src="./bumbweb_game/sfx/cast-bumbo-win.mp3"
           ></audio>
           <audio
             id="cast-valuepp-sfx"
-            src="bumbweb_game/sfx/cast-valuepp.mp3"
+            src="./bumbweb_game/sfx/cast-valuepp.mp3"
           ></audio>
-          <audio id="heal-sfx" src="bumbweb_game/sfx/heal.mp3"></audio>
+          <audio id="heal-sfx" src="./bumbweb_game/sfx/heal.mp3"></audio>
           <audio
             id="cast-breadcheese-sfx"
-            src="bumbweb_game/sfx/punchstrong.mp3"
+            src="./bumbweb_game/sfx/punchstrong.mp3"
           ></audio>
           <div id="stats" style="display: none">
             <div id="player-hp" data-player-hp="0"></div>
@@ -272,7 +272,7 @@
               height: 100%;
             "
           >
-            <img id="d-cert" src="bumbweb_game/sprites/d-cert.png" />
+            <img id="d-cert" src="./bumbweb_game/sprites/d-cert.png" />
 
             <div id="player-dices">
               <div
@@ -285,7 +285,7 @@
             <div id="show-onhover-tooltip">
               <img
                 id="tooltip-image"
-                src="bumbweb_game/sprites/characters/enemy.png"
+                src="./bumbweb_game/sprites/characters/enemy.png"
               />
               <div id="tooltip-text-content">
                 <h3 id="tooltip-text-title" class="has-text-white">Bumbino</h3>
@@ -294,13 +294,13 @@
             </div>
 
             <img
-              src="bumbweb_game/sprites/characters/player.png"
+              src="./bumbweb_game/sprites/characters/player.png"
               id="player"
               class="character"
             />
-            <img src="bumbweb_game/sprites/calls/call-6.png" id="call" />
+            <img src="./bumbweb_game/sprites/calls/call-6.png" id="call" />
             <img
-              src="bumbweb_game/sprites/characters/enemy.png"
+              src="./bumbweb_game/sprites/characters/enemy.png"
               id="enemy"
               class="character"
             />

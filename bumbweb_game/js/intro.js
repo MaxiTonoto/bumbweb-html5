@@ -2,7 +2,7 @@ import { playBumguideSFX } from "./play/sfx.js";
 import { startGame } from './play/gui.js';
 import { stats } from './play/stats.js';
 
-const staticUrl = "../";
+const staticUrl = "./";
 let canPassDialogue, bumGuide, dialogueBox;
 bumGuide = document.getElementById("bumguide");
 dialogueBox = document.getElementById("intro-dialogue");

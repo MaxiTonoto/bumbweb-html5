@@ -5,7 +5,7 @@ import { stats } from "./stats.js";
 const player = document.getElementById("player");
 const enemy = document.getElementById("enemy");
 const call = document.getElementById("call");
-const staticUrl = "../";
+const staticUrl = "./";
 const tooltip = document.getElementById("show-onhover-tooltip");
 const tooltipImage = document.getElementById("tooltip-image");
 const tooltipTitle = document.getElementById("tooltip-text-title");

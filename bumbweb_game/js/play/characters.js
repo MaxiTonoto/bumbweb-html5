@@ -1,7 +1,7 @@
 import { callName } from "./call.js";
 import { gameVars } from "../play.js";
 
-const staticUrl = "../";
+const staticUrl = "./";
 export const player = document.getElementById("player");
 export const enemy = document.getElementById("enemy");
 export const call = document.getElementById("call");
@@ -86,19 +86,19 @@ export function setPlayerExpression(expression="") {
 
   switch (expression) {
     case "normal":
-      player.src = staticUrl + '/bumbweb_game/sprites/characters/player.png';
+      player.src = staticUrl + 'bumbweb_game/sprites/characters/player.png';
       break;
     case "hurt":
-      player.src = staticUrl + '/bumbweb_game/sprites/characters/player-hurt.png';
+      player.src = staticUrl + 'bumbweb_game/sprites/characters/player-hurt.png';
       break;
     case "ready":
-      player.src = staticUrl + '/bumbweb_game/sprites/characters/player-ready.png';
+      player.src = staticUrl + 'bumbweb_game/sprites/characters/player-ready.png';
       break;
     case "throw":
-      player.src = staticUrl + '/bumbweb_game/sprites/characters/player-throw.png';
+      player.src = staticUrl + 'bumbweb_game/sprites/characters/player-throw.png';
       break;
     default:
-      player.src = staticUrl + '/bumbweb_game/sprites/characters/player.png';
+      player.src = staticUrl + 'bumbweb_game/sprites/characters/player.png';
   }
 }
 
@@ -107,22 +107,22 @@ export function setEnemyExpression(expression="") {
 
   switch (expression) {
     case "normal":
-      enemy.src = staticUrl + '/bumbweb_game/sprites/characters/enemy.png';
+      enemy.src = staticUrl + 'bumbweb_game/sprites/characters/enemy.png';
       break;
     case "hurt":
-      enemy.src = staticUrl + '/bumbweb_game/sprites/characters/enemy-hurt.png';
+      enemy.src = staticUrl + 'bumbweb_game/sprites/characters/enemy-hurt.png';
       break;
     case "ready":
-      enemy.src = staticUrl + '/bumbweb_game/sprites/characters/enemy-ready.png';
+      enemy.src = staticUrl + 'bumbweb_game/sprites/characters/enemy-ready.png';
       break;
     case "throw":
-      enemy.src = staticUrl + '/bumbweb_game/sprites/characters/enemy-throw-pre.png';
+      enemy.src = staticUrl + 'bumbweb_game/sprites/characters/enemy-throw-pre.png';
       setTimeout(() => {
-        enemy.src = staticUrl + '/bumbweb_game/sprites/characters/enemy-throw.png';
+        enemy.src = staticUrl + 'bumbweb_game/sprites/characters/enemy-throw.png';
       }, 100);
       break;
     default:
-      enemy.src = staticUrl + '/bumbweb_game/sprites/characters/enemy.png';
+      enemy.src = staticUrl + 'bumbweb_game/sprites/characters/enemy.png';
   }
 }
 
