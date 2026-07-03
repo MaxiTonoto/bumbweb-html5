@@ -24,10 +24,10 @@ Node: ```npx http-server .```
 
 ## Examples
 ### Dice attack
-<img width="1280" height="720" alt="1 (1)" src="https://github.com/user-attachments/assets/07d48523-0b3a-40f2-a8fc-4de7041c312c" />
+<img width="1280" height="720" alt="1 (1)" src="https://github.com/user-attachments/assets/b0199a73-3868-48fb-93e9-a1c4904d7142" />
 
 ### Magic usage
-<img width="1280" height="720" alt="3 (1)" src="https://github.com/user-attachments/assets/c4c0d63f-7372-490c-b835-c681825f59c5" />
+<img width="1280" height="720" alt="3 (1)" src="https://github.com/user-attachments/assets/1eda9b9b-a55d-4016-84e2-27f4ddd5867a" />
 
 ## Note on Commit History
 This repository does not include the original commit history. The game was originally built using Django Templates, and was later manually "migrated" to a vanilla HTML5 version.
