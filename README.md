@@ -26,6 +26,9 @@ Node: ```npx http-server .```
 ### Dice attack
 <img width="1280" height="720" alt="1 (1)" src="https://github.com/user-attachments/assets/b0199a73-3868-48fb-93e9-a1c4904d7142" />
 
+### Call!
+<img width="942" height="527" alt="222" src="https://github.com/user-attachments/assets/79ba7948-92f9-4f95-a7fe-4d66fb2d076e" />
+
 ### Magic usage
 <img width="1280" height="720" alt="3 (1)" src="https://github.com/user-attachments/assets/1eda9b9b-a55d-4016-84e2-27f4ddd5867a" />
 
