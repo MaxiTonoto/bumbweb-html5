@@ -1,6 +1,6 @@
 import { startIntro } from "./intro.js";
 
-const staticUrl = "./";
+const staticUrl = new URL('../../', import.meta.url).href;
 const loadingProgress = document.getElementById('loading-progress');
 const imageUrls = [
     "./bumbweb_game/sprites/characters/bumguide-1.png",

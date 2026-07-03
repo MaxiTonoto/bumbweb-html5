@@ -1,7 +1,7 @@
 import { callName } from "./call.js";
 import { gameVars } from "../play.js";
 
-const staticUrl = "./";
+const staticUrl = new URL('../../../', import.meta.url).href;
 export const player = document.getElementById("player");
 export const enemy = document.getElementById("enemy");
 export const call = document.getElementById("call");
