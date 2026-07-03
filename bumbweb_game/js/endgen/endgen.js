@@ -1,6 +1,8 @@
 import { gameVars } from "../play.js";
 
-const staticUrl = new URL('../../../', import.meta.url).href;
+const staticUrl = window.location.pathname.includes('/bumbweb-html5')
+  ? window.location.origin + '/bumbweb-html5/'
+  : './';
 let callUrl = document.getElementById("call").src;
 let dateToday = new Date();
 dateToday = dateToday.toLocaleDateString("es-ES");

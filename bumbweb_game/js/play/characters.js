@@ -1,7 +1,9 @@
 import { callName } from "./call.js";
 import { gameVars } from "../play.js";
 
-const staticUrl = new URL('../../../', import.meta.url).href;
+const staticUrl = window.location.pathname.includes('/bumbweb-html5')
+  ? window.location.origin + '/bumbweb-html5/'
+  : './';
 export const player = document.getElementById("player");
 export const enemy = document.getElementById("enemy");
 export const call = document.getElementById("call");

@@ -3,7 +3,9 @@ import { growBack, setPlayerExpression, setEnemyExpression, setCallExpression } 
 import { theLostEffect, keeperEffect } from './call-effects.js';
 import { playDicePlusOneValueSFX, playDiceThrowSFX } from './sfx.js';
 
-const staticUrl = new URL('../../../', import.meta.url).href;
+const staticUrl = window.location.pathname.includes('/bumbweb-html5')
+  ? window.location.origin + '/bumbweb-html5/'
+  : './';
 export const playerDices = document.getElementById("player-dices-relative");
 export const enemyDices = document.getElementById("enemy-dices");
 

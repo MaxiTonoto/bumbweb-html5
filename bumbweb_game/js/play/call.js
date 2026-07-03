@@ -10,7 +10,9 @@ import { shrinkBack, playerMove, playerMoveBack, setPlayerExpression } from "./c
 import { checkWhoCallEffects, outCallEffects } from './call-effects.js';
 import { callEnterSFX, callOutSFX, playDiceReadySFX } from "./sfx.js";
 
-const staticUrl = new URL('../../../', import.meta.url).href;
+const staticUrl = window.location.pathname.includes('/bumbweb-html5')
+  ? window.location.origin + '/bumbweb-html5/'
+  : './';
 let callScreenButton = document.getElementById("call-screen-button");
 let callButton = document.getElementById("call-button");
 

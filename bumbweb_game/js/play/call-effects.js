@@ -3,7 +3,9 @@ import { stats, updateStatLabels } from './stats.js';
 import { effectSuccesfulSFX } from './sfx.js';
 import { call } from './call.js';
 
-const staticUrl = new URL('../../../', import.meta.url).href;
+const staticUrl = window.location.pathname.includes('/bumbweb-html5')
+  ? window.location.origin + '/bumbweb-html5/'
+  : './';
 
 export function checkWhoCallEffects(playerDiceValue=1) {
     if (playerDiceValue === 2) {
